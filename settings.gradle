@@ -1,0 +1,2 @@
+include ':app', ':shadow_layout'
+rootProject.name='Shadow Layout'

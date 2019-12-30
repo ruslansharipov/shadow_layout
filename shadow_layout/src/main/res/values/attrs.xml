@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ShadowLayout">
+        <attr name="shadowLeftOffset" format="dimension|reference" />
+        <attr name="shadowRightOffset" format="dimension|reference" />
+        <attr name="shadowTopOffset" format="dimension|reference" />
+        <attr name="shadowBottomOffset" format="dimension|reference" />
+        <attr name="shadowRadius" format="integer" />
+        <attr name="shadowAlphaPercent" format="integer|reference" />
+        <attr name="shadowClippedToPadding" format="boolean" />
+        <attr name="downscaleRate" format="integer"/>
+        <attr name="blurType" format="enum">
+            <enum name="renderscript" value="0"/>
+            <enum name="stack" value="1"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

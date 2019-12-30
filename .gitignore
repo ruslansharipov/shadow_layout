@@ -1,0 +1,14 @@
+.idea/*
+*.iml
+.gradle
+/local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+/temp
+.mirror
+/keystore/rendezvous_release.jks
+/keystore/keystore_release.properties
+!.idea/codeStyles
+!.idea/inspectionProfiles
