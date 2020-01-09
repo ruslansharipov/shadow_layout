@@ -98,23 +98,20 @@ class ShadowLayout @JvmOverloads constructor(
         }
 
         shadowBitmap?.let {
-
-//            canvas?.drawBitmap(
-//                it,
-//                -shadowBlurRadius.toFloat() + shadowLeftOffset,
-//                -shadowBlurRadius.toFloat() + shadowTopOffset,
-//                shadowPaint
-//            )
-            shadowRect.run {
-                top = getTop() - shadowTopOffset
-                left = getLeft() - shadowLeftOffset
-                right = getRight() + shadowRightOffset
-                bottom = getBottom() + shadowBottomOffset
-            }
+            updateShadowRect()
             canvas?.drawBitmap(it, null, shadowRect, shadowPaint)
         }
 
         super.dispatchDraw(canvas)
+    }
+
+    private fun updateShadowRect() {
+        shadowRect.run {
+            top = getTop() - shadowTopOffset
+            left = getLeft() - shadowLeftOffset
+            right = getRight() + shadowRightOffset
+            bottom = getBottom() + shadowBottomOffset
+        }
     }
 
     /**
@@ -173,7 +170,7 @@ class ShadowLayout @JvmOverloads constructor(
         )
     }
 
-    private fun safeCreateBlurRadius(desiredRadius : Int): Int {
+    private fun safeCreateBlurRadius(desiredRadius: Int): Int {
         return when {
             blurType == BlurType.RENDERSCRIPT && desiredRadius < MIN_BLUR_RADIUS -> MIN_BLUR_RADIUS
             blurType == BlurType.RENDERSCRIPT && desiredRadius > MAX_BLUR_RADIUS -> MAX_BLUR_RADIUS
